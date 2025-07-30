@@ -1,9 +1,7 @@
-# 🪄 React Hover Menu System / Система Hover-меню на React
+<h1 align="center" style="font-size:2.5em;">🪄 React Dropdown Menu</h1>
 
-A flexible hover-based UI system for creating interactive menus and panels in **React**/**Next.js**.  
-Гибкая система пользовательского интерфейса на основе наведения (hover) для создания интерактивных меню и панелей в **React**/**Next.js**.
-
----
+A React Dropdown Menu UI system in **React**/**Next.js**.  
+React Dropdown Menu на **React**/**Next.js**.
 
 ![demo](./example.gif)
 
