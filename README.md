@@ -1,6 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
+<h1 align="center" style="color:#2b7fff; font-size:2.5em;">React Dropdown Menu</h1>
 
 ![demo](./example.gif)
 
