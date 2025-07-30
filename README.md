@@ -1,34 +1,109 @@
-<h1 align="center" style="color:#2b7fff; font-size:2.5em;">React Dropdown Menu</h1>
+# 🪄 React Hover Menu System / Система Hover-меню на React
+
+A flexible hover-based UI system for creating interactive menus and panels in **React**/**Next.js**.  
+Гибкая система пользовательского интерфейса на основе наведения (hover) для создания интерактивных меню и панелей в **React**/**Next.js**.
+
+---
 
 ![demo](./example.gif)
 
+---
+
+## ✨ Features / Возможности
+
+- 🧩 **Composable**: Wrap any component with a hover-triggered panel  
+  🧩 **Композиция**: Оберните любой компонент в панель, активируемую при наведении
+- ⏱ **Customizable hide delay**  
+  ⏱ **Настраиваемая задержка скрытия**
+- 🧠 **Global state** via React Context  
+  🧠 **Глобальное состояние** через React Context
+- 🎬 **Smooth animations** using `framer-motion`  
+  🎬 **Плавная анимация** с использованием `framer-motion`
+
+---
+
+## 📦 Installation / Установка
+
+Install required dependencies:  
+Установите зависимости:
+
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install framer-motion clsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 Usage / Использование
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Wrap your app in `HoverLayout`
 
-## Learn More
+### 1. Оберните приложение в `HoverLayout`
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import { HoverLayout } from "./hover-layout";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+function App() {
+  return (
+    <HoverLayout hideDelay={800}>
+      {/* HoverItems go here / Здесь размещаются HoverItem */}
+    </HoverLayout>
+  );
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Add `HoverItem` components
 
-## Deploy on Vercel
+### 2. Добавьте компоненты `HoverItem`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```tsx
+import { HoverItem } from "./hover-item";
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<HoverItem id="example" trigger={<button>Hover me</button>}>
+  <div>Hovered content here</div>
+</HoverItem>;
+```
+
+---
+
+## 🛠 Customization / Настройка
+
+- Add custom styles via the `className` prop  
+  Добавьте стили через проп `className`
+- Modify animation/timing in the component files  
+  Измените анимацию и тайминги в самих файлах компонентов
+
+---
+
+## 📁 File Structure / Структура файлов
+
+- `hover-layout.tsx`: Manages global hover state  
+  Управляет глобальным состоянием ховера
+- `hover-item.tsx`: Display logic for hover-triggered panels  
+  Отображает панель при наведении
+
+---
+
+## 💡 Use Cases / Примеры использования
+
+- Multi-level hover navigation menus  
+  Многоуровневые меню навигации
+- Tooltips and hover cards  
+  Подсказки и всплывающие карточки
+- Product previews on hover  
+  Превью товаров при наведении
+
+---
+
+## 🧪 Example / Пример
+
+```tsx
+<HoverItem id="user" trigger={<span>Пользователь</span>}>
+  <div className="flex gap-4">
+    <img src="/avatar.png" alt="Avatar" className="w-12 h-12 rounded-full" />
+    <div>
+      <h4>Иван Иванов</h4>
+      <p>Открыть профиль</p>
+    </div>
+  </div>
+</HoverItem>
+```
